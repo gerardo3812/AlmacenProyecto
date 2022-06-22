@@ -6,9 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  banderabuscar: boolean= false;
   constructor() { }
-
+  buscar(){
+    if (this.banderabuscar == false){
+      this.banderabuscar= true;
+    }else{
+      this.banderabuscar = false;
+    }
+  }
   ngOnInit(): void {
   }
 
