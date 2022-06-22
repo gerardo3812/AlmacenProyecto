@@ -4,6 +4,7 @@ import {ProductosComponent} from "./productos/productos.component";
 import {ProveedorComponent} from "./proveedor/proveedor.component";
 import {IniciohomeModule} from "./iniciohome.module";
 import {InicioComponent} from "./inicio/inicio.component";
+import {ReporteComponent} from "./reporte/reporte.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,9 @@ const routes: Routes = [
       },
       {
         path: 'inicio', component: InicioComponent
+      },
+      {
+        path: 'reporte', component: ReporteComponent
       },
       {
         path: 'iniciohome', loadChildren: () => import('./iniciohome.module').then(m => m.IniciohomeModule)

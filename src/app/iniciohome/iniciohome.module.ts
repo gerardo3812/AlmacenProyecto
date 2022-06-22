@@ -6,6 +6,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductosComponent } from './productos/productos.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ProveedorComponent } from './proveedor/proveedor.component';
     InicioComponent,
     NavbarComponent,
     ProductosComponent,
-    ProveedorComponent
+    ProveedorComponent,
+    ReporteComponent
   ],
   exports: [
     NavbarComponent,
