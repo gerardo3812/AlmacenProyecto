@@ -31,7 +31,7 @@ export class ProductosComponent implements OnInit {
   }
 
   modificarproducto(id: string) {
-    this.router.navigate(['/editar/' + id]);
+    this.router.navigate(['/editarproducto/' + id]);
 
   }
 }
