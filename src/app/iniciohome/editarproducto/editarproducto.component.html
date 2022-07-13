@@ -1,0 +1,84 @@
+<div class="container">
+  <p>EDITAR PRODUCTO </p>
+  <div class="row">
+    <div class="col-sm-6">
+      <form>
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <label class="mr-sm-2" for="inlineFormCustomSelect" >ID Proveedor</label>
+            <select  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+              <option selected name="value" >Choose...</option>
+              <option *ngFor="let i of listaproveedor" [value]="i.IdProveedor">{{i.IdProveedor}}</option>
+            </select>
+
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Id Proveedor</label>
+          <input [(ngModel)]="datos.IdProveedor" placeholder="3819"  type="text" class="form-control" name="nombre">
+        </div>
+
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1" >
+            <label class="mr-sm-2" for="inlineFormCustomSelect">ID Anaquel</label>
+            <select name="select"  class="custom-select mr-sm-2" id="inlineFormCustomSelect1" >
+              <option selected name="id">Choose...</option>
+              <option *ngFor="let i of listaanaquel" [value]="i.IdAnaquel">{{i.IdAnaquel}}</option>
+
+            </select>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Id Anaquel</label>
+          <input [(ngModel)]="datos.IdAnaquel" placeholder="3819"  type="text" class="form-control" name="nombre">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nombre de producto</label>
+          <input [(ngModel)]="datos.nombre" type="text" class="form-control" name="nombre">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Descripcion del producto </label>
+          <input [(ngModel)]="datos.descripcion" type="text" class="form-control" name="nombre">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Precio del producto</label>
+          <input [(ngModel)]="datos.precio_producto" type="text" class="form-control" name="nombre">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Cantidad del producto</label>
+          <input [(ngModel)]="datos.cantidad_producto" type="text" class="form-control" name="nombre">
+        </div>
+        <button (click)= "modificar()" class="btn btn-primary">ACTUALIZAR PRODUCTO</button>
+      </form>
+    </div>
+
+
+    <div class="col-sm-6">
+      <form>
+
+
+        <div class="mb-3">
+          <label class="form-label">{{datos.IdProducto}}</label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">{{datos.IdProveedor}}</label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">{{datos.IdAnaquel}}</label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">{{datos.nombre}}</label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">{{datos.descripcion}}</label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">{{datos.precio_producto}}</label>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</div>
