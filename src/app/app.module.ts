@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {IniciohomeModule} from "./iniciohome/iniciohome.module";
 import {IniciohomeRoutingModule} from "./iniciohome/iniciohome-routing.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {IniciohomeRoutingModule} from "./iniciohome/iniciohome-routing.module";
     BrowserModule,
     AppRoutingModule,
     IniciohomeModule,
-    IniciohomeRoutingModule
+    IniciohomeRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,6 +12,25 @@ ruta.get('/',(req, res)=>{
       console.error(err);
   });
 });
+////consulta de proveedores bd (get)
+ruta.get('/proveedor',(req, res)=>{
+  let sql = "select * from proveedor"
+
+  consulta.query(sql, (err, rows)=>{
+    if(!err) res.json(rows)
+    else
+      console.error(err);
+  });
+});
+ruta.get('/anaquel',(req, res)=>{
+  let sql = "select * from anaquel"
+
+  consulta.query(sql, (err, rows)=>{
+    if(!err) res.json(rows)
+    else
+      console.error(err);
+  });
+});
 ////consulta bd con ID (get)
 
 ruta.get('/:id',(req, res)=>{

@@ -1,86 +1,39 @@
-<button type="button" class="btn btn-secondary">Productos</button>
-<form class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom01">Nombres</label>
-      <input type="text" class="form-control" id="validationCustom01" placeholder="Luis Gerardo" value="" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom02">Apellido paterno</label>
-      <input type="text" class="form-control" id="validationCustom02" placeholder="Figueroa" value="" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom03">Apellido Materno </label>
-      <input type="text" class="form-control" id="validationCustom0" placeholder="Rodriguez" value="" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
+<p>Lista de Productos</p>
+<button type="button" class="btn btn-success" routerLink="/agregarproducto">AGREGAR NUEVO PRODUCTO</button>
+
+<table class="table" >
+
+  <thead>
+  <tr>
+    <th scope="col">Id Producto</th>
+    <th scope="col">Id Proveedor</th>
+    <th scope="col">Id Anaquel</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Descripcion</th>
+    <th scope="col">Precio producto</th>
+    <th scope="col">Cantidad Disponible</th>
+    <th scope="col">Editar</th>
+    <th scope="col">Eliminar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor=" let i of lista">
+    <th scope="row">{{i.IdProducto}}</th>
+    <th scope="row">{{i.IdProveedor}}</th>
+    <th scope="row">{{i.IdAnaquel}}</th>
+    <td>{{i.nombre}}</td>
+    <td>{{i.descripcion}}</td>
+    <td>{{i.precio_producto}}</td>
+    <td>{{i.cantidad_producto}}</td>
+    <td>
+      <button type="button" routerLink="/editarproducto" (click)="modificarproducto(i.IdProducto)"   class="btn btn-primary">Editar producto</button>
+    </td>
+    <td>
+      <button type="button" (click)="Eliminarproducto((i.IdProducto))" class="btn btn-danger">Eliminar</button>
+    </td>
 
 
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom03">Codigo Postal</label>
-      <input type="text" class="form-control" id="validationCustom03" placeholder="06720" required>
-      <div class="invalid-feedback">
-        Please provide a valid city.
-      </div>
-    </div>
+  </tr>
 
-    <div class="form-row align-items-center">
-      <div class="col-auto my-1">
-        <label class="mr-sm-2" for="inlineFormCustomSelect">Estado</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Choose...</option>
-          <option value="1">CDMX</option>
-          <option value="2">ESTADO DE MEXICO</option>
-          <option value="3">TOLUCA</option>
-        </select>
-      </div>
-    </div>
-
-
-
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-
-      <div class="invalid-feedback">
-        You must agree before submitting.
-      </div>
-    </div>
-  </div>
-  <button class="btn btn-primary" type="submit">Guardar</button>
-  <button class="btn btn-primary" type="submit">Actualizar</button>
-  <button type="button" class="btn btn-danger">Borrar</button>
-
-</form>
-
-<script>
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-  (function() {
-    'use strict';
-    window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
-</script>
-
+  </tbody>
+</table>

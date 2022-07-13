@@ -23,9 +23,9 @@ const routes: Routes = [
       },
       {
         path: 'iniciohome', loadChildren: () => import('./iniciohome.module').then(m => m.IniciohomeModule)
-      }
+      },
+    ],
 
-    ]
   }
 
 
